@@ -23,8 +23,8 @@ namespace Rozamac.Views
     public partial class Image : UserControl
     {
         ContentControl content;
-        bool fan1Clicked, fan2Clicked, winderButtonClicked, unwinderButtonClicked, insideButtonClicked;
-        UInt16 workingmodeInt = 0;
+        bool fan1Clicked, fan2Clicked, insideButtonClicked;
+        bool workingmode;
 
         public Image(ContentControl contentControl)
         {
@@ -42,21 +42,6 @@ namespace Rozamac.Views
             openKeypad(fan2_orange, 0, 40, 6, "562", "4564");
         }
 
-        private void WinderButton_Click(object sender, RoutedEventArgs e)
-        {
-            winderButtonClicked = !winderButtonClicked;
-            if (winderButtonClicked)
-            {
-                WinderButton.Background = Brushes.Orange;
-                WinderButton.Content = "Açık";
-            }
-            else
-            {
-                WinderButton.Background = Brushes.White;
-                WinderButton.Content = "Kapalı";
-            }
-        }
-
         private void Fan1_Click(object sender, RoutedEventArgs e)
         {
             fan1Clicked = !fan1Clicked;
@@ -66,43 +51,60 @@ namespace Rozamac.Views
                 Fan1.Background = Brushes.White;
         }
 
-        private void unwinderDiameter_TouchDown(object sender, TouchEventArgs e)
+        private void Fan2_Click(object sender, RoutedEventArgs e)
         {
-            openKeypad(unwinderDiameter, 0, 60, 6, "50", "5325");
+            fan2Clicked = !fan2Clicked;
+            if (fan2Clicked)
+                Fan2.Background = Brushes.Orange;
+            else
+                Fan2.Background = Brushes.White;
         }
 
-        private void winderDiameter_TouchDown(object sender, TouchEventArgs e)
+        private void WorkingMode_TouchDown(object sender, TouchEventArgs e)
         {
-            openKeypad(winderDiameter, -231, 60, 6, "642", "6342");
-        }
-
-        private void PressureReset_TouchDown(object sender, TouchEventArgs e)
-        {
-
-        }
-
-        private void workingMode_TouchDown(object sender, TouchEventArgs e)
-        {
-            workingmodeInt++;
-            if (workingmodeInt > 2)
+            switch (workingmode)
             {
-                workingmodeInt = 0;
-            }
-            switch (workingmodeInt)
-            {
-                case 0:
+                case true:
                     workingMode.Background = Brushes.White;
                     workingMode.Content = "4+0 ÇALIŞMA MODU AKTİF";
                     break;
-                case 1:
+                case false:
                     workingMode.Background = Brushes.Orange;
                     workingMode.Content = "2+2 ÇALIŞMA MODU AKTİF";
                     break;
-                case 2:
-                    workingMode.Background = Brushes.LightGreen;
-                    workingMode.Content = "3+1 ÇALIŞMA MODU AKTİF";
-                    break;
             }
+            workingmode = !workingmode;
+            Console.WriteLine(workingmode.ToString());
+        }
+
+        private void LeftUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftUpDiameter_TouchDown(object sender, TouchEventArgs e)
+        {
+
+        }
+
+        private void LeftDown_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LeftDown_TouchDown(object sender, TouchEventArgs e)
+        {
+
+        }
+
+        private void RightUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RightUp_TouchDown(object sender, TouchEventArgs e)
+        {
+
         }
 
         private void InsideButton_Click(object sender, RoutedEventArgs e)
@@ -118,30 +120,6 @@ namespace Rozamac.Views
                 InsideButton.Background = Brushes.Red;
                 InsideButton.Content = "<-- İçeri";
             }
-        }
-
-        private void UnwinderButton_Click(object sender, RoutedEventArgs e)
-        {
-            unwinderButtonClicked = !unwinderButtonClicked;
-            if (unwinderButtonClicked)
-            {
-                UnwinderButton.Background = Brushes.Orange;
-                UnwinderButton.Content = "Açık";
-            }
-            else
-            {
-                UnwinderButton.Background = Brushes.White;
-                UnwinderButton.Content = "Kapalı";
-            }
-        }
-
-        private void Fan2_Click(object sender, RoutedEventArgs e)
-        {
-            fan2Clicked = !fan2Clicked;
-            if (fan2Clicked)
-                Fan2.Background = Brushes.Orange;
-            else
-                Fan2.Background = Brushes.White;
         }
 
         private void openKeypad(TextBox textBox, int x, int y, int text_max_length, string min, string max)

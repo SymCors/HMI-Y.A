@@ -96,29 +96,13 @@
                 <Image Stretch="Uniform" Source="pack://application:,,,/Images/rozamac_background.png" Margin="0,0,10,0"
                        VerticalAlignment="Top"/>
 
-                <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20, 0, 0, 20">
-                    <Button x:Name="Turkish" Height="70" Width="130"
-                Background="White" BorderBrush="Transparent" Click="Turkish_Click">
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1">
-                            <Image Stretch="Fill" Source="pack://application:,,,/Images/turkish_flag.png"/>
-                        </Grid>
-                    </Button>
+                <Button x:Name="Turkish" Height="70" Width="130" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                Background="White" BorderBrush="Transparent" Click="Turkish_Click" Margin="50,0,0,50">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1">
+                        <Image Stretch="Fill" Source="pack://application:,,,/Images/turkish_flag.png"/>
+                    </Grid>
+                </Button>
 
-                    <Button x:Name="Russian" Height="70" Width="130" Margin="15, 0, 15, 0"
-                Background="White" BorderBrush="Transparent" Click="Russian_Click">
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1">
-                            <Image Stretch="Fill" Source="pack://application:,,,/Images/russian_flag.jpg"/>
-                        </Grid>
-                    </Button>
-
-                    <Button x:Name="English" Height="70" Width="130"
-                Background="White" BorderBrush="Transparent" Click="English_Click">
-                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1">
-                            <Image Stretch="Fill" Source="pack://application:,,,/Images/english_flag.png" />
-                        </Grid>
-                    </Button>
-                </WrapPanel>
-                
             </Grid>
         </Border>
 

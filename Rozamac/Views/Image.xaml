@@ -35,224 +35,240 @@
     </UserControl.Resources>
 
     <Grid>
-        <Image Stretch="Uniform" Source="pack://application:,,,/Images/production_line.png"/>
-        <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="17" Foreground="White" Margin="221,134,0,0" Width="141" TextAlignment="Center"/>
+        <Image Stretch="Uniform" Source="pack://application:,,,/Images/production_line.png" Margin="0, 50, 0, 0"/>
 
-        <Button x:Name="Fan1" Content="Fan 1" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="221,189,0,0" Width="141" Click="Fan1_Click" />
+        <Grid  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="394,6,416.2,0" Width="730">
+            <GroupBox Name="LengtAmountGroup" BorderBrush="Transparent" Margin="0, 20, 0, 0">
+                <Grid>
+                    <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="0,50,0,0" Width="105" Height="64" >
+                        <StackPanel>
 
-        <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" Margin="109,134,0,0"
-                  BorderThickness="1" TouchDown="fan1_orange_TouchDown">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
-                <TextBox x:Name="fan1_orange" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70"/>
-                <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
-            </StackPanel>
-        </Border>
+                            <TextBlock  Padding="5" Foreground="Black" 
+                 Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="107,191,0,0" Width="100" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,9,0">
-                <TextBlock Padding="5" Foreground="White" x:Name="fan1_blue"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="70" />
-                <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
-            </StackPanel>
-        </Border>
-
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="87,333,0,0" Width="106" Height="64" >
-            <StackPanel>
-
-                <TextBlock  Padding="5" Foreground="White" 
-                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-
-                <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="Black" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="397,333,0,0" Width="106" Height="64" >
-            <StackPanel>
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="120,50,0,0" Width="105" Height="64" >
+                        <StackPanel>
 
-                <TextBlock  Padding="5" Foreground="White" 
-                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
 
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="220,340,0,0" >
-            <Ellipse Fill="White" Height="50" Width="50" 
-                 Stroke="Black" VerticalAlignment="Top"/>
-            <TextBlock Text="4" FontSize="30" FontFamily="Arial"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+                    <Button x:Name="AmountReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64"/>
 
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="325,340,0,0" >
-            <Ellipse Fill="White" Height="50" Width="50" 
-                 Stroke="Black" VerticalAlignment="Top"/>
-            <TextBlock Text="1" FontSize="30" FontFamily="Arial"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+                    <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Height="30" Background="Gainsboro" Margin="0,0,0,0">
+                        <Label Content="Baskı Adedi" Foreground="Black" FontSize="17" FontFamily="Arial"/>
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="87,675,0,0" Width="106" Height="64" >
-            <StackPanel>
+                    </Border>
+                    <Polygon Points="10,20 20,5, 1,5" Stroke="Gainsboro" Fill="Gainsboro" Margin="10,25,0,0"
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                </Grid>
+            </GroupBox>
 
-                <TextBlock  Padding="5" Foreground="White" 
-                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+            <GroupBox Name="HeaderGroup" VerticalAlignment="Top" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0, 20, 0, 0">
+                <Grid>
+                    <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="0,50,0,0" Width="105" Height="64" >
+                        <StackPanel>
 
-                <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5" Foreground="Black" 
+                 Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+
+                            <TextBlock  Padding="5, 0" Foreground="Black" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="397,675,0,0" Width="106" Height="64" >
-            <StackPanel>
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="120,50,0,0" Width="105" Height="64" >
+                        <StackPanel>
 
-                <TextBlock  Padding="5" Foreground="White" 
-                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
 
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="220,682,0,0" >
-            <Ellipse Fill="White" Height="50" Width="50" 
-                 Stroke="Black" VerticalAlignment="Top"/>
-            <TextBlock Text="3" FontSize="30" FontFamily="Arial"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
+                    <Button x:Name="PressureReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64"/>
 
-        <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="325,682,0,0" >
-            <Ellipse Fill="White" Height="50" Width="50" 
-                 Stroke="Black" VerticalAlignment="Top"/>
-            <TextBlock Text="2" FontSize="30" FontFamily="Arial"
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Height="30" Background="Gainsboro" Margin="0,0,0,0">
+                        <Label Content="Baskı Metrajı" Foreground="Black" FontSize="17" FontFamily="Arial"/>
+
+                    </Border>
+                    <Polygon Points="10,20 20,5, 1,5" Stroke="Gainsboro" Fill="Gainsboro" Margin="10,25,0,0"
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                </Grid>
+            </GroupBox>
+
         </Grid>
 
         <Button x:Name="workingMode" Content="4+0 ÇALIŞMA MODU AKTİF" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="600,250,0,0" Width="406" TouchDown="workingMode_TouchDown" />
+                   FontSize="20" Foreground="Black" Margin="550,297,0,0" Width="433" TouchDown="WorkingMode_TouchDown" Height="40"/>
 
-        <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="548,100,0,0" Width="105" Height="64" >
-            <StackPanel>
 
-                <TextBlock  Padding="5" Foreground="Black" 
-                 Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+        <GroupBox Name="Fan1Group" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="131,170,0,0" BorderBrush="Transparent" BorderThickness="0">
+            <Grid>
+                <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="17" Foreground="White" Margin="120,0,0,0" Width="141" TextAlignment="Center" Height="31"/>
 
-                <TextBlock  Padding="5, 0" Foreground="Black" 
+                <Button x:Name="Fan1" Content="Fan 1" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Click="Fan1_Click" Height="33" />
+
+                <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
+                  BorderThickness="1" TouchDown="fan1_orange_TouchDown" Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <TextBox x:Name="fan1_orange" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70"/>
+                        <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="0,50,0,0" Width="100" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,9,0">
+                        <TextBlock Padding="5" Foreground="White" x:Name="fan1_blue"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="70" />
+                        <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="Fan2Group" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,170,148.2,0"
+                  BorderBrush="Transparent"  BorderThickness="0">
+            <Grid>
+                <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="17" Foreground="White" Margin="120,0,0,0" Width="141" TextAlignment="Center" Height="31"/>
+
+                <Button x:Name="Fan2" Content="Fan 2" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Click="Fan2_Click" Height="33" />
+
+                <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
+                  BorderThickness="1" TouchDown="fan2_orange_TouchDown" Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <TextBox x:Name="fan2_orange" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70"/>
+                        <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="0,50,0,0" Width="100" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,9,0">
+                        <TextBlock Padding="5" Foreground="White" x:Name="fan2_blue"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="70" />
+                        <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Name="NmGroup" VerticalAlignment="Top" HorizontalAlignment="Right" BorderBrush="Transparent"
+                  Margin="0,409,126.2,0" Width="481" Height="261" BorderThickness="0">
+            <Grid>
+                <WrapPanel Name="Nm1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B"
+                                VerticalAlignment="Top" HorizontalAlignment="Left" Width="106" Height="64" >
+                        <StackPanel>
+
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+
+                            <TextBlock  Padding="5, 0" Foreground="White" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="20,10,0,0" >
+                        <Ellipse Fill="White" Height="50" Width="50" 
+                 Stroke="Black" VerticalAlignment="Top"/>
+                        <TextBlock Text="1" FontSize="30" FontFamily="Arial"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </WrapPanel>
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="660,100,0,0" Width="105" Height="64" >
-            <StackPanel>
+                <WrapPanel Name="Nm2" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Margin="0,0,0,0">
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Width="106" Height="64" >
+                        <StackPanel>
 
-                <TextBlock  Padding="5" Foreground="White" 
-                 Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" 
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
-            </StackPanel>
-        </Border>
+                        </StackPanel>
+                    </Border>
 
-        <Button x:Name="PressureReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="773,100,0,0" Width="105" Height="64"/>
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="20,10,0,0" >
+                        <Ellipse Fill="White" Height="50" Width="50" 
+                 Stroke="Black" VerticalAlignment="Top"/>
+                        <TextBlock Text="2" FontSize="30" FontFamily="Arial"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </WrapPanel>
 
-        <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="327" Height="30" Background="Gainsboro" Margin="550,55,0,0">
-            <Label Content="Baskı Metrajı" Foreground="Black" FontSize="17" FontFamily="Arial"/>
+                <WrapPanel Name="Nm3" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="0,10,0,0" >
+                        <Ellipse Fill="White" Height="50" Width="50" 
+                 Stroke="Black" VerticalAlignment="Top"/>
+                        <TextBlock Text="3" FontSize="30" FontFamily="Arial"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
 
-        </Border>
-        <Polygon Points="10,20 20,5, 1,5" Stroke="Gainsboro" Fill="Gainsboro" Margin="554,75,0,0"
-                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Margin="20,0,0,0" Width="106" Height="64" >
+                        <StackPanel>
 
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-        <Border VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1054,134,0,0"  BorderBrush="Orange"
-                 BorderThickness="1"  Width="100" TouchDown="fan2_orange_TouchDown" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right ">
-                <TextBox Padding="5" BorderBrush="Transparent" x:Name="fan2_orange"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="80" MaxLength="4"/>
-                <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" Padding="0,0,5,0"/>
-            </StackPanel>
-        </Border>
+                            <TextBlock  Padding="5, 0" Foreground="White" 
+                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
 
-        <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="1054,191,0,0" Width="100" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Padding="5" Foreground="White" x:Name="fan2_blue"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="79" />
-                <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" Padding="0,0,5,0" />
-            </StackPanel>
-        </Border>
+                <WrapPanel Name="Nm4" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,10,0,0" >
+                        <Ellipse Fill="White" Height="50" Width="50" 
+                 Stroke="Black" VerticalAlignment="Top"/>
+                        <TextBlock Text="4" FontSize="30" FontFamily="Arial"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
 
-        <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="17" Foreground="White" Margin="1167,133,0,0" Width="141" TextAlignment="Center"/>
+                    <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left" Margin="20,0,0,0" Width="106" Height="64" >
+                        <StackPanel>
 
-        <Button x:Name="Fan2" Content="Fan 2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="1167,189,0,0" Width="141" Click="Fan2_Click" />
+                            <TextBlock  Padding="5" Foreground="White" 
+                 Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
+                            <TextBlock  Padding="5, 0" Foreground="White" 
+                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
+            </Grid>
+        </GroupBox>
 
+        <StackPanel Margin="56,382,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button x:Name="leftUp" Content="Kapalı" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Click="LeftUp_Click" Height="39" />
 
-        <Ellipse Fill="Gainsboro" Height="200" Width="200" HorizontalAlignment="Right"
-                 Stroke="Black" VerticalAlignment="Bottom" Margin="0,0,405,197"/>
-
-
-        <WrapPanel Margin="0,0,447,194" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-
-            <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" Content="Ø" FontSize="30"/>
-
-            <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50" Margin="5, 0, 5, 0"
-                        VerticalAlignment="Center" HorizontalAlignment="Right">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="100.10" Padding="10" FontSize="20" Foreground="White"/>
-                    <TextBlock Text="mm" Padding="10" FontSize="20" Foreground="White"/>
-                </StackPanel>
-            </Border>
-        </WrapPanel>
-
-
-        <Ellipse Fill="Gainsboro" Height="100" Width="100" HorizontalAlignment="Right"
-                 Stroke="Black" VerticalAlignment="Bottom" Margin="0,0,3,265"/>
-
-        <WrapPanel Margin="0,0,19,222" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-
-            <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" Content="Ø" FontSize="30"/>
-
-            <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50" Margin="5, 0, 5, 0"
-                        VerticalAlignment="Center" HorizontalAlignment="Right">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="100.10" Padding="10" FontSize="20" Foreground="White"/>
-                    <TextBlock Text="mm" Padding="10" FontSize="20" Foreground="White"/>
-                </StackPanel>
-            </Border>
-        </WrapPanel>
-
-
-        <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Margin="0,610,366,293"
-                        VerticalAlignment="Center" HorizontalAlignment="Right">
-            <TextBlock FontSize="20" Foreground="Black" Text="Çözgü" Padding="15, 0" VerticalAlignment="Center" Width="112"
-                       TextAlignment="Center"/>
-        </Border>
-
-        <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Margin="0,604,92,300"
-                        VerticalAlignment="Center" HorizontalAlignment="Right">
-            <TextBlock FontSize="20" Foreground="Black" Text="Sarıcı" Padding="15, 0" VerticalAlignment="Center" Width="112"
-                       TextAlignment="Center"/>
-        </Border>
-
-        <StackPanel Margin="0,0,379,405" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button x:Name="UnwinderButton" Content="Kapalı" Background="White" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Click="UnwinderButton_Click" />
-            
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
 
@@ -265,11 +281,110 @@
                     </StackPanel>
                 </Button>
 
-                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="unwinderDiameter_TouchDown">
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="LeftUpDiameter_TouchDown"
+                        Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <TextBox VerticalAlignment="Center" Padding="8, 0"
                  Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
-                             BorderBrush="Transparent" MaxLength="6"  x:Name="unwinderDiameter"  Width="80"/>
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="leftUpDiameter"  Width="80"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <WrapPanel>
+
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
+
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
+                       Width="45" Height="45" />
+                    </StackPanel>
+                </Button>
+
+                <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50"
+                        VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
+                                    Width="80" TextAlignment="Right"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+
+        <StackPanel Margin="56,725,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button x:Name="leftDown" Content="Kapalı" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Click="LeftDown_Click" Height="39" />
+
+
+            <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
+
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        FontSize="30"   Margin="0, 0, 6, 0">
+
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
+                       Width="40" Height="40" />
+                    </StackPanel>
+                </Button>
+
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="LeftDown_TouchDown"
+                        Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBox VerticalAlignment="Center" Padding="8, 0"
+                 Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="leftDownDiameter"  Width="80"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <WrapPanel>
+
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
+
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
+                       Width="45" Height="45" />
+                    </StackPanel>
+                </Button>
+
+                <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50"
+                        VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
+                                    Width="80" TextAlignment="Right"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+
+        <StackPanel Margin="523,515,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Button x:Name="rightUp" Content="Kapalı" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Click="RightUp_Click" Height="39" />
+
+
+            <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
+
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        FontSize="30"   Margin="0, 0, 6, 0">
+
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
+                       Width="40" Height="40" />
+                    </StackPanel>
+                </Button>
+
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="RightUp_TouchDown"
+                        Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBox VerticalAlignment="Center" Padding="8, 0"
+                 Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="rightUpDiameter"  Width="80"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -298,53 +413,7 @@
         </StackPanel>
 
 
-        <StackPanel Margin="0,0,28,377" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button x:Name="WinderButton" Content="Kapalı" Background="White" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Click="WinderButton_Click" />
-
-
-            <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
-
-                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        FontSize="30"   Margin="0, 0, 6, 0">
-
-                    <StackPanel>
-                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
-                       Width="40" Height="40" />
-                    </StackPanel>
-                </Button>
-
-                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="winderDiameter_TouchDown">
-                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
-                        <TextBox x:Name="winderDiameter" HorizontalAlignment="Left"  Padding="8, 0"
-                 Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center" Width="80"
-                             BorderBrush="Transparent" VerticalAlignment="Center" MaxLength="6"/>
-                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Border>
-            </WrapPanel>
-
-            <StackPanel Orientation="Horizontal">
-
-                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
-
-                    <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
-                       Width="45" Height="45" />
-                </Button>
-
-                <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                        <TextBlock Text="0.0" Padding="10" FontSize="20" Foreground="White" VerticalAlignment="Center" Width="80"
-                                   TextAlignment="Right"/>
-                        <TextBlock Text="kg" Padding="10" FontSize="20" Foreground="White" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Border>
-            </StackPanel>
-        </StackPanel>
-
-
-        <Button x:Name="InsideButton" Content="&lt;-- İçeri" Background="#FFB92B2B" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="10, 5"
-                   FontSize="20" Foreground="White" Margin="20" Width="141" FontFamily="Arial" Click="InsideButton_Click" />
+        <Button x:Name="InsideButton" Content="&lt;-- İçeri" Background="Red" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="23" Foreground="White" Margin="76,0,0,301.2" Width="128" FontFamily="Arial" Click="InsideButton_Click" Height="40" />
     </Grid>
 </UserControl>

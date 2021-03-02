@@ -6,7 +6,7 @@ namespace Rozamac.Models
     {
         public static void showKeyboard()
         {
-            Process.Start("osk.exe");
+            Process.Start(@"c:\Windows\Sysnative\cmd.exe", "/c osk.exe");
         }
     }
 }
