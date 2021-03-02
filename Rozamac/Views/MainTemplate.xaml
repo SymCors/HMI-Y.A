@@ -173,7 +173,7 @@
             <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Height="60"
                     HorizontalAlignment="Center" Margin="0, 15, 0, 0">
                 <WrapPanel>
-                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0"/>
+                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0" x:Name="actualSpeed"/>
                     <TextBlock Text="m/dk" Padding="5" FontSize="25" Margin="0, 5, 0, 0" />
                 </WrapPanel>
             </Border>

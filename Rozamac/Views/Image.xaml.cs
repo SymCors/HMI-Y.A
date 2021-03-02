@@ -1,4 +1,5 @@
 ﻿using KeyPad;
+using Rozamac.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Rozamac.Views
 {
@@ -22,42 +24,58 @@ namespace Rozamac.Views
     /// </summary>
     public partial class Image : UserControl
     {
+        public IList<object> list;
         ContentControl content;
-        bool fan1Clicked, fan2Clicked, insideButtonClicked;
+        bool fanClicked, insideButtonClicked;
         bool workingmode;
 
         public Image(ContentControl contentControl)
         {
             InitializeComponent();
+
+            HomePageEvent.event1 -= HomePageEvent_event1;
+            HomePageEvent.event1 += HomePageEvent_event1;
+
             content = contentControl;
         }
 
-        private void fan1_orange_TouchDown(object sender, TouchEventArgs e)
+        private void HomePageEvent_event1(object sender, HomePageEvent e)
         {
-            openKeypad(fan1_orange, 0, 40, 6, "123", "6432");
+            list = e.list;
+            Dispatcher.Invoke(() =>
+            {
+                try
+                {
+                    gActualBaskiAdet.Text = list[0].ToString();
+                    gAdetSet.Text = list[1].ToString();
+                    gActualMetraj.Text = list[2].ToString();
+                    gMetrajSet.Text = list[3].ToString();
+                    gTunelIsiSet.Text = list[4].ToString();
+                    gTunelIsiActual.Text = list[5].ToString();
+                    gRenkIsiSet.Text = list[6].ToString();
+                    gRenkIsiActual.Text = list[7].ToString();
+
+                    gSarici1SetKg.Text = list[8].ToString();
+                    gSarici1ActKg.Text = list[9].ToString();
+                    gSarici2SetKg.Text = list[10].ToString();
+                    gSarici2ActKg.Text = list[11].ToString();
+                    gCozguSetKg.Text = list[12].ToString();
+                    gCozguActKg.Text = list[13].ToString();
+                    gCapSet.Text = list[14].ToString();
+                    gCozguActCap.Text = list[14].ToString();
+                }
+                catch { }
+            });
         }
 
-        private void fan2_orange_TouchDown(object sender, TouchEventArgs e)
+        private void gTunelIsiSet_TouchDown(object sender, TouchEventArgs e)
         {
-            openKeypad(fan2_orange, 0, 40, 6, "562", "4564");
+            openKeypad(gTunelIsiSet, 0, 40, 6, "123", "6432");
         }
 
-        private void Fan1_Click(object sender, RoutedEventArgs e)
+        private void gRenkIsiSet_TouchDown(object sender, TouchEventArgs e)
         {
-            fan1Clicked = !fan1Clicked;
-            if (fan1Clicked)
-                Fan1.Background = Brushes.Orange;
-            else
-                Fan1.Background = Brushes.White;
-        }
-
-        private void Fan2_Click(object sender, RoutedEventArgs e)
-        {
-            fan2Clicked = !fan2Clicked;
-            if (fan2Clicked)
-                Fan2.Background = Brushes.Orange;
-            else
-                Fan2.Background = Brushes.White;
+            openKeypad(gRenkIsiSet, 0, 40, 6, "562", "4564");
         }
 
         private void WorkingMode_TouchDown(object sender, TouchEventArgs e)
@@ -74,40 +92,49 @@ namespace Rozamac.Views
                     break;
             }
             workingmode = !workingmode;
-            Console.WriteLine(workingmode.ToString());
         }
 
-        private void LeftUp_Click(object sender, RoutedEventArgs e)
+        private void gActualBaskiAdet_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gActualBaskiAdet, 0, 40, 6, "123", "6432");
         }
 
-        private void LeftUpDiameter_TouchDown(object sender, TouchEventArgs e)
+        private void gActualMetraj_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gActualMetraj, 0, 40, 6, "123", "6432");
         }
 
-        private void LeftDown_Click(object sender, RoutedEventArgs e)
+        private void gSarici1SetKg_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gSarici1SetKg, 0, 40, 6, "123", "6432");
         }
 
-        private void LeftDown_TouchDown(object sender, TouchEventArgs e)
+        private void gSarici2SetKg_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gSarici2SetKg, 0, 40, 6, "123", "6432");
         }
 
-        private void RightUp_Click(object sender, RoutedEventArgs e)
+        private void gCozguSetKg_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gCozguSetKg, 0, 40, 6, "123", "6432");
         }
 
-        private void RightUp_TouchDown(object sender, TouchEventArgs e)
+        private void gCapSet_TouchDown(object sender, TouchEventArgs e)
         {
-
+            openKeypad(gCapSet, 0, 40, 6, "123", "6432");
         }
 
-        private void InsideButton_Click(object sender, RoutedEventArgs e)
+        private void gTunelIsi_TouchDown(object sender, TouchEventArgs e)
+        {
+            FanClicked();
+        }
+
+        private void gRenkIsi_TouchDown(object sender, TouchEventArgs e)
+        {
+            FanClicked();
+        }
+
+        private void InsideButton_TouchDown(object sender, TouchEventArgs e)
         {
             insideButtonClicked = !insideButtonClicked;
             if (insideButtonClicked)
@@ -119,6 +146,21 @@ namespace Rozamac.Views
             {
                 InsideButton.Background = Brushes.Red;
                 InsideButton.Content = "<-- İçeri";
+            }
+        }
+
+        private void FanClicked()
+        {
+            fanClicked = !fanClicked;
+            if (fanClicked)
+            {
+                gTunelIsi.Background = Brushes.Orange;
+                gRenkIsi.Background = Brushes.Orange;
+            }
+            else
+            {
+                gTunelIsi.Background = Brushes.White;
+                gRenkIsi.Background = Brushes.White;
             }
         }
 

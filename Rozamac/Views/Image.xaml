@@ -41,13 +41,12 @@
             <GroupBox Name="LengtAmountGroup" BorderBrush="Transparent" Margin="0, 20, 0, 0">
                 <Grid>
                     <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="0,50,0,0" Width="105" Height="64" >
+                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gActualBaskiAdet_TouchDown">
                         <StackPanel>
-
                             <TextBlock  Padding="5" Foreground="Black" 
                  Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="Black" 
+                            <TextBox  Padding="5, 0" Foreground="Black" x:Name="gActualBaskiAdet" IsReadOnly="True" Focusable="False"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -59,7 +58,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gAdetSet"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -79,13 +78,13 @@
             <GroupBox Name="HeaderGroup" VerticalAlignment="Top" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0, 20, 0, 0">
                 <Grid>
                     <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="0,50,0,0" Width="105" Height="64" >
+                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gActualMetraj_TouchDown">
                         <StackPanel>
 
                             <TextBlock  Padding="5" Foreground="Black" 
                  Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="Black" 
+                            <TextBox  Padding="5, 0" Foreground="Black"  x:Name="gActualMetraj" IsReadOnly="True" Focusable="False"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -97,7 +96,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gMetrajSet"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -116,7 +115,7 @@
 
         </Grid>
 
-        <Button x:Name="workingMode" Content="4+0 ÇALIŞMA MODU AKTİF" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+        <Button x:Name="workingMode" Content="4+0 ÇALIŞMA MODU AKTİF" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="20" Foreground="Black" Margin="550,297,0,0" Width="433" TouchDown="WorkingMode_TouchDown" Height="40"/>
 
 
@@ -125,14 +124,15 @@
                 <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="17" Foreground="White" Margin="120,0,0,0" Width="141" TextAlignment="Center" Height="31"/>
 
-                <Button x:Name="Fan1" Content="Fan 1" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Click="Fan1_Click" Height="33" />
+                <Button x:Name="gTunelIsi" Content="Fan 1" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Height="33" 
+                        TouchDown="gTunelIsi_TouchDown"/>
 
                 <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
-                  BorderThickness="1" TouchDown="fan1_orange_TouchDown" Background="White">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
-                        <TextBox x:Name="fan1_orange" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70"/>
+                  BorderThickness="1" TouchDown="gTunelIsiSet_TouchDown" Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="-0.8,0" Width="100">
+                        <TextBox x:Name="gTunelIsiSet" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70" IsReadOnly="True" Focusable="False"/>
                         <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
                     </StackPanel>
                 </Border>
@@ -140,7 +140,7 @@
                 <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
                 Margin="0,50,0,0" Width="100" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,9,0">
-                        <TextBlock Padding="5" Foreground="White" x:Name="fan1_blue"
+                        <TextBlock Padding="5" Foreground="White" x:Name="gTunelIsiActual"
                  Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="70" />
                         <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
                     </StackPanel>
@@ -154,14 +154,15 @@
                 <TextBlock Text="Durdu" Background="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="17" Foreground="White" Margin="120,0,0,0" Width="141" TextAlignment="Center" Height="31"/>
 
-                <Button x:Name="Fan2" Content="Fan 2" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Click="Fan2_Click" Height="33" />
+                <Button x:Name="gRenkIsi" Content="Fan 2" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Height="33" 
+                        TouchDown="gRenkIsi_TouchDown"/>
 
                 <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
-                  BorderThickness="1" TouchDown="fan2_orange_TouchDown" Background="White">
+                  BorderThickness="1" TouchDown="gRenkIsiSet_TouchDown" Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,0">
-                        <TextBox x:Name="fan2_orange" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
-                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70"/>
+                        <TextBox x:Name="gRenkIsiSet" Padding="5" VerticalAlignment="Center" BorderBrush="Transparent" MaxLength="4"
+                 Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Width="70" IsReadOnly="True" Focusable="False"/>
                         <TextBlock Text="°C" Foreground="Black" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
                     </StackPanel>
                 </Border>
@@ -169,7 +170,7 @@
                 <Border BorderBrush="#68838B" BorderThickness="2" Background="#68838B" VerticalAlignment="Top" HorizontalAlignment="Left"
                 Margin="0,50,0,0" Width="100" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,9,0">
-                        <TextBlock Padding="5" Foreground="White" x:Name="fan2_blue"
+                        <TextBlock Padding="5" Foreground="White" x:Name="gRenkIsiActual"
                  Text="0" TextAlignment="Right" FontSize="17" FontFamily="Arial" Height="30" Width="70" />
                         <TextBlock Text="°C" Foreground="White" VerticalAlignment="Center"  FontSize="17" FontFamily="Arial" />
                     </StackPanel>
@@ -188,7 +189,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="SAxis1"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -208,7 +209,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="SAxis2"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -236,7 +237,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="SAxis3"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -257,7 +258,7 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Nm" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" 
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="SAxis4"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
@@ -267,13 +268,13 @@
 
         <StackPanel Margin="56,382,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button x:Name="leftUp" Content="Kapalı" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Click="LeftUp_Click" Height="39" />
+                   FontSize="20" Foreground="Black" Height="39" />
 
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        FontSize="30"   Margin="0, 0, 6, 0">
+                        FontSize="30">
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
@@ -281,12 +282,12 @@
                     </StackPanel>
                 </Button>
 
-                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="LeftUpDiameter_TouchDown"
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="gSarici1SetKg_TouchDown"
                         Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBox VerticalAlignment="Center" Padding="8, 0"
+                        <TextBox VerticalAlignment="Center" Padding="8, 0" IsReadOnly="True" Focusable="False"
                  Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
-                             BorderBrush="Transparent" MaxLength="6"  x:Name="leftUpDiameter"  Width="80"/>
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="gSarici1SetKg"  Width="80"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -295,7 +296,7 @@
             <WrapPanel>
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30">
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
@@ -307,7 +308,7 @@
                         VerticalAlignment="Center" HorizontalAlignment="Right">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
-                                    Width="80" TextAlignment="Right"/>
+                                    Width="80" TextAlignment="Right" x:Name="gSarici1ActKg"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -316,13 +317,13 @@
 
         <StackPanel Margin="56,725,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Button x:Name="leftDown" Content="Kapalı" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Click="LeftDown_Click" Height="39" />
+                   FontSize="20" Foreground="Black" Height="39" />
 
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        FontSize="30"   Margin="0, 0, 6, 0">
+                        FontSize="30" >
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
@@ -330,12 +331,12 @@
                     </StackPanel>
                 </Button>
 
-                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="LeftDown_TouchDown"
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="gSarici2SetKg_TouchDown"
                         Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBox VerticalAlignment="Center" Padding="8, 0"
+                        <TextBox VerticalAlignment="Center" Padding="8, 0" IsReadOnly="True" Focusable="False"
                  Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
-                             BorderBrush="Transparent" MaxLength="6"  x:Name="leftDownDiameter"  Width="80"/>
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="gSarici2SetKg"  Width="80"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -344,7 +345,7 @@
             <WrapPanel>
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30">
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
@@ -356,7 +357,7 @@
                         VerticalAlignment="Center" HorizontalAlignment="Right">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
-                                    Width="80" TextAlignment="Right"/>
+                                    Width="80" TextAlignment="Right" x:Name="gSarici2ActKg"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -364,14 +365,12 @@
         </StackPanel>
 
         <StackPanel Margin="523,515,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="rightUp" Content="Kapalı" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Click="RightUp_Click" Height="39" />
 
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        FontSize="30"   Margin="0, 0, 6, 0">
+                        FontSize="30">
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
@@ -379,21 +378,21 @@
                     </StackPanel>
                 </Button>
 
-                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="RightUp_TouchDown"
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="gCozguSetKg_TouchDown"
                         Background="White">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBox VerticalAlignment="Center" Padding="8, 0"
+                        <TextBox VerticalAlignment="Center" Padding="8, 0" IsReadOnly="True" Focusable="False"
                  Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
-                             BorderBrush="Transparent" MaxLength="6"  x:Name="rightUpDiameter"  Width="80"/>
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="gCozguSetKg"  Width="80"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
             </WrapPanel>
-
+            
             <WrapPanel>
 
                 <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
-                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30"  Margin="0, 0, 5, 0">
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30">
 
                     <StackPanel>
                         <Image Stretch="Uniform" Source="pack://application:,,,/Images/line_red.png"
@@ -405,7 +404,54 @@
                         VerticalAlignment="Center" HorizontalAlignment="Right">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
-                                    Width="80" TextAlignment="Right"/>
+                                    Width="80" TextAlignment="Right" x:Name="gCozguActKg"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
+
+        <Button x:Name="InsideButton" Content="&lt;-- İçeri" Background="Red" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="23" Foreground="White" Margin="76,0,0,301.2" Width="128" FontFamily="Arial" Height="40"
+                TouchDown="InsideButton_TouchDown"/>
+
+
+        <StackPanel Margin="643,696,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        FontSize="30" >
+
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="pack://application:,,,/Images/arrow.png"
+                       Width="40" Height="40" />
+                    </StackPanel>
+                </Button>
+
+                <Border BorderBrush="Orange" BorderThickness="1" TouchDown="gCapSet_TouchDown"
+                        Background="White">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBox VerticalAlignment="Center" Padding="8, 0" IsReadOnly="True" Focusable="False"
+                 Text="0.0" TextAlignment="Right" FontSize="19" Height="50" VerticalContentAlignment="Center"
+                             BorderBrush="Transparent" MaxLength="6"  x:Name="gCapSet"  Width="80"/>
+                        <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="Black"  VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+
+            <WrapPanel>
+
+                <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30">
+
+                    <Button Height="50" Width="50" BorderBrush="#68838B" BorderThickness="2" Background="White"
+                        VerticalAlignment="Center" HorizontalAlignment="Left" Content="Ø" FontSize="30"/>
+                </Button>
+
+                <Border Background="#68838B" BorderBrush="#68838B" BorderThickness="2" Height="50"
+                        VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="0.0" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"
+                                    Width="80" TextAlignment="Right" x:Name="gCozguActCap"/>
                         <TextBlock Text="kg" Padding="10" FontSize="19" Foreground="White" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Border>
@@ -413,7 +459,5 @@
         </StackPanel>
 
 
-        <Button x:Name="InsideButton" Content="&lt;-- İçeri" Background="Red" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="23" Foreground="White" Margin="76,0,0,301.2" Width="128" FontFamily="Arial" Click="InsideButton_Click" Height="40" />
     </Grid>
 </UserControl>

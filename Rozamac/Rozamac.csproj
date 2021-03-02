@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -111,6 +112,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Events\HomePageEvent.cs" />
+    <Compile Include="Events\LineSchemaEvent.cs" />
+    <Compile Include="Events\MainEvent.cs" />
     <Compile Include="Models\Keyboards.cs" />
     <Compile Include="Views\Alarms.xaml.cs">
       <DependentUpon>Alarms.xaml</DependentUpon>
@@ -219,9 +224,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\administrator.png" />
   </ItemGroup>
@@ -303,6 +306,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>HmiDB.mdf</DependentUpon>
     </Content>
+    <Resource Include="Images\fpz.JPG" />
+    <Resource Include="Images\tpt.JPG" />
     <Content Include="PlciBridge.dll" />
   </ItemGroup>
   <ItemGroup>

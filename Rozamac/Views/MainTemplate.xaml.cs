@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rozamac.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,17 @@ namespace Rozamac.Views
     /// </summary>
     public partial class MainTemplate : UserControl
     {
+        public IList<object> list;
         ContentControl content;
         private string selected = "HomePage";
         private string selectedInner = "Image";
         public MainTemplate(ContentControl contentControl, string contentArea)
         {
             InitializeComponent();
+
+            MainEvent.event1 -= MainEvent_event1;
+            MainEvent.event1 += MainEvent_event1;
+
             content = contentControl;
             time.Text = DateTime.Now.ToString("HH:mm:ss");
             date.Text = DateTime.Now.ToString("dd MMM yyyy");
@@ -70,6 +76,20 @@ namespace Rozamac.Views
             {
                 ContentArea.Content = new Image(content);
             }
+        }
+
+        private void MainEvent_event1(object sender, MainEvent e)
+        {
+            list = e.list;
+
+            Dispatcher.Invoke(() =>
+            {
+                try
+                {
+                    actualSpeed.Text = list[0].ToString();
+                }
+                catch { }
+            });
         }
 
         private void Timer_Work(object sender, EventArgs e)
