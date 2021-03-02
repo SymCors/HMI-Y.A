@@ -1,0 +1,53 @@
+﻿<Window x:Class="Rozamac.Views.UserSelectionPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rozamac.Views"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Topmost="True"
+        Title="" Height="365" Width="300" WindowStyle="ThreeDBorderWindow" 
+        ResizeMode="NoResize" Icon="pack://application:,,,/Images/logo.png">
+    <StackPanel Margin="10">
+        <Grid>
+            <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="327" Height="30" Background="Gainsboro">
+                <Label Content="Kullanıcı Seçimi" Foreground="Black" FontSize="17" FontFamily="Arial"/>
+
+            </Border>
+            <Polygon Points="10,20 20,5, 1,5" Stroke="Gainsboro" Fill="Gainsboro"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15,25,0,-16"/>
+        </Grid>
+        <Grid>
+            <TextBlock Text="Kullanıcı      >" Background="White" HorizontalAlignment="Left" FontSize="20"
+                               Width="150" VerticalAlignment="Center" Padding="10,0" Margin="10"/>
+            <TextBlock Text="Operatör" HorizontalAlignment="Right" FontSize="20" 
+                         VerticalAlignment="Center" Margin="0,20,26,18"/>
+        </Grid>
+        <Rectangle Fill="Black" Height="1" Margin="-10"/>
+        <Button x:Name="ChooseUser" Margin="20, 10" Height="50" Background="White" Click="ChooseUser_Click">
+            <Grid Width="200">
+                <Image Stretch="Uniform" Source="pack://application:,,,/Images/lock_open.png" Margin="0,0,10,0" Height="40"
+                       HorizontalAlignment="Left"/>
+                <TextBlock Text="Kullanıcı Seç" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           FontWeight="600" FontSize="17" Margin="50, 0"/>
+            </Grid>
+        </Button>
+        <Button x:Name="SignOut" Margin="20, 10" Height="50" Background="White" Click="SignOut_Click">
+            <Grid Width="200">
+                <Image Stretch="Uniform" Source="pack://application:,,,/Images/lock_close.png" Margin="0,0,10,0" Height="40"
+                       HorizontalAlignment="Left"/>
+                <TextBlock Text="Kullanıcı Çıkışı" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           FontWeight="600" FontSize="17" Margin="50,8,0,8"/>
+            </Grid>
+        </Button>
+        <Button x:Name="Exit" Margin="20, 10" Height="50" Background="White" Click="Exit_Click">
+            <Grid Width="200">
+                <Image Stretch="Uniform" Source="pack://application:,,,/Images/close.png" Margin="0,0,10,0" Height="40"
+                       HorizontalAlignment="Left"/>
+                <TextBlock Text="Çıkış" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           FontWeight="600" FontSize="17" Margin="50, 0"/>
+            </Grid>
+        </Button>
+        
+        
+    </StackPanel>
+</Window>

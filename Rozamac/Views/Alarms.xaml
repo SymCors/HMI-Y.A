@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Rozamac.Views.Alarms"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Rozamac.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="935" d:DesignWidth="1535" Background="White">
+    <Grid Margin="10">
+        <DataGrid VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="listViewAlarms"
+          ItemsSource="{Binding Alarms}" CanUserSortColumns="True" SelectionMode="Single"
+          CanUserAddRows="False" Background="White" SelectionUnit="FullRow"
+          AutoGenerateColumns="False" Height="810"
+          HeadersVisibility="All" IsReadOnly="True" IsTextSearchCaseSensitive="True"
+                  SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}" Width="1495" Margin="10,0">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight"  Value="Bold" />
+                    <Setter Property="FontSize"  Value="20" />
+                    <Setter Property="Padding"  Value="20" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                        Width="1200"
+                        FontSize="17"
+                    Binding="{Binding Explanation}"
+                    Header="Açıklama" />
+
+                <DataGridTextColumn
+                        Width="295"
+                        FontSize="17"
+                    Binding="{Binding Time}"
+                    Header="Zaman"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Reset" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Width="150" Height="64" Margin="10,0,0,18"/>
+
+        <Button Content="Kaydet" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   FontSize="20" Foreground="Black" Width="150" Height="64" Margin="0,0,10,20"/>
+
+        <Button Content="Reset" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   FontSize="20" Foreground="Black" Width="150" Height="64" Margin="0,0,190,20"/>
+
+        <Button Content="Ack" Background="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   FontSize="20" Foreground="Black" Width="150" Height="64" Margin="0,0,370,20"/>
+        
+        <ComboBox Width="310" Height="60" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                  Padding="10, 0, 0, 0" BorderBrush="#89696FD0" x:Name="comboBoxMail" Margin="0,0,550,22"
+                  FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SelectedIndex="0">
+            <ComboBoxItem>Silinenleri Gösterme</ComboBoxItem>
+            <ComboBoxItem>Hepsini Göster</ComboBoxItem>
+        </ComboBox>
+
+    </Grid>
+</UserControl>

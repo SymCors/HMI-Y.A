@@ -1,0 +1,450 @@
+﻿<UserControl x:Class="Rozamac.Views.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Rozamac.Views"
+             mc:Ignorable="d" FontSize="23"
+             d:DesignHeight="935" d:DesignWidth="1535" Background="White">
+    <Grid>
+        <Grid>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="650" Margin="10, 10">
+                <Grid Margin="10">
+                    <Border VerticalAlignment="Top" Background="Gainsboro">
+                        <Label Content="Sarıcı" Foreground="Black" FontFamily="Arial"/>
+                    </Border>
+                    <Polygon Points="10,20 20,5 1,5" Stroke="Gainsboro" Fill="Gainsboro"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,31,0,-13"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Otomatik Hız" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Jog Hızı" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="İvmelenme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Sağ Konveyor Pozisyon" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Sol Konveyor Pozisyon" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Y. Konveyor Pozisyon" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+
+                <Grid Margin="10, 15">
+                    <Border VerticalAlignment="Top" Background="Gainsboro">
+                        <Label Content="Sarıcı" Foreground="Black" FontFamily="Arial"/>
+                    </Border>
+                    <Polygon Points="10,20 20,5 1,5" Stroke="Gainsboro" Fill="Gainsboro"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,31,0,-13"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75" Margin="0, -10, 0, 0">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Yüksek Konveyor Pozisyon" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+            </StackPanel>
+
+
+            <Label Content="Ürün Adı" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="70,0,0,180"/>
+
+            <ComboBox Height="60" Margin="70, 120" Width="500"
+                  Padding="15,-1,0,0" BorderBrush="#89696FD0"
+                   VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                  FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SelectedIndex="0">
+                <ComboBoxItem>Set0</ComboBoxItem>
+                <ComboBoxItem>Set1</ComboBoxItem>
+                <ComboBoxItem>Set2</ComboBoxItem>
+                <ComboBoxItem>Set3</ComboBoxItem>
+            </ComboBox>
+
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="70,0,0,50" Height="60" Width="60"
+                BorderBrush="Transparent">
+                <StackPanel>
+                    <Image Stretch="UniformToFill" Source="pack://application:,,,/Images/newrecipe.png" Width="40" />
+                </StackPanel>
+            </Button>
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="140,0,0,50" Height="60" Width="60"
+                BorderBrush="Transparent">
+                <StackPanel>
+                    <Image Stretch="UniformToFill" Source="pack://application:,,,/Images/delete.png" Width="40" />
+                </StackPanel>
+            </Button>
+
+
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="510,0,0,50" Height="60" Width="60"
+                BorderBrush="Transparent">
+                <StackPanel>
+                    <Image Stretch="UniformToFill" Source="pack://application:,,,/Images/download.png" Width="40" />
+                </StackPanel>
+            </Button>
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="440,0,0,50" Height="60" Width="60"
+                BorderBrush="Transparent">
+                <StackPanel>
+                    <Image Stretch="UniformToFill" Source="pack://application:,,,/Images/upload.png" Width="40" />
+                </StackPanel>
+            </Button>
+        </Grid>
+
+
+
+        <Grid>
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Height="80" Width="80"
+                Margin="678,312,0,0" Content="+" FontSize="50"
+                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    Background="White" BorderBrush="Black" BorderThickness="1"/>
+
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Height="80" Width="80"
+                Margin="783,312,0,0" Content="-" FontSize="50"
+                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    Background="White"  BorderBrush="Black" BorderThickness="1"/>
+
+
+
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Height="80" Width="80"
+                Margin="678,420,0,0" Content="+" FontSize="50"
+                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    Background="White" BorderBrush="Black" BorderThickness="1"/>
+
+            <Button VerticalAlignment="Top" HorizontalAlignment="Left" Height="80" Width="80"
+                Margin="783,420,0,0" Content="-" FontSize="50"
+                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                    Background="White"  BorderBrush="Black" BorderThickness="1"/>
+        </Grid>
+
+
+
+
+        <Grid>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Width="650" Margin="10, 10">
+                <Grid Margin="10">
+                    <Border VerticalAlignment="Top" Background="Gainsboro">
+                        <Label Content="Sarıcı" Foreground="Black" FontFamily="Arial"/>
+                    </Border>
+                    <Polygon Points="10,20 20,5 1,5" Stroke="Gainsboro" Fill="Gainsboro"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,31,0,-13"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Otomatik Hız" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Jog Hızı" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Yavas Hızı" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="İvmelenme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Alçak Konveyor Y. Çıkma" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Y. Konveyor Y. Çıkma" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+
+                <Grid VerticalAlignment="Top" Height="75">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 0, 0, 0">
+                        <TextBlock Text="Urun Bırakma Pozisyonu" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 0, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,0,6,22"/>
+                </Grid>
+
+                <Grid Margin="10, 15">
+                    <Border VerticalAlignment="Top" Background="Gainsboro">
+                        <Label Content="Genel Ayarlar" Foreground="Black" FontFamily="Arial"/>
+                    </Border>
+                    <Polygon Points="10,20 20,5 1,5" Stroke="Gainsboro" Fill="Gainsboro"
+                 VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,31,0,-13"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75" Margin="0, -10, 0, 0">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Sol Adet Düzeltme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75" Margin="0, -10, 0, 0">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Sağ Adet Düzeltme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75" Margin="0, -10, 0, 0">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Sol mm Düzeltme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+                <Grid VerticalAlignment="Top" Height="75" Margin="0, -10, 0, 0">
+                    <Border BorderBrush="Black" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Height="53" Width="400" Margin="10, 10, 0, 0">
+                        <TextBlock Text="Sağ mm Düzeltme" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                    </Border>
+                    <Border BorderBrush="#FF6820" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right"
+                Height="53" Width="200" Margin="10, 10, 10, 0">
+                        <Grid>
+                            <TextBlock Text="1000.0" Background="White" HorizontalAlignment="Left" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                            <TextBlock Text="mm/s" Background="White" HorizontalAlignment="Right" 
+                              VerticalAlignment="Center" Padding="10,0"/>
+                        </Grid>
+                    </Border>
+                    <Rectangle Fill="#FF6820" Width="4" Height="53" VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Margin="0,10,6,12"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Rozamac.Views.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Rozamac.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="White" FontSize="17">
+
+    <Grid>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="User name" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"
+               Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="username" Width="200" Margin="100, 5, 0, 0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                 Height="40" VerticalContentAlignment="Center" PreviewMouseLeftButtonDown="username_PreviewMouseLeftButtonDown" />
+
+
+            <Label Content="Password" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"
+               Margin="10, 65, 0, 0"/>
+            <PasswordBox x:Name="Password" Width="200" Margin="100, 60, 0, 0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                 Height="40" VerticalContentAlignment="Center" PreviewMouseLeftButtonDown="Password_PreviewMouseLeftButtonDown" />
+
+            <TextBox x:Name="PasswordHidden" Width="200" Margin="100, 60, 0, 0" HorizontalAlignment="Right" VerticalAlignment="Top"
+                 Height="40" VerticalContentAlignment="Center"
+                 Text="{Binding Password, Mode=TwoWay, ElementName=MyPasswordBox}" Visibility="Collapsed"/>
+
+            <CheckBox Content="Show Password" VerticalAlignment="Top" HorizontalAlignment="Right"
+                  Margin="0, 110, 0, 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                  FontSize="20" Checked="PasswordChecked" Unchecked="PasswordUncheck"/>
+
+            <Button x:Name="SignIn" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Content="Sign In"
+                Margin="0, 145,0,0" Height="40" Click="SignIn_Click"/>
+
+            <Button x:Name="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Content="Back"
+                Margin="0, 145,130,0" Height="40" Click="Back_Click"/>
+        </Grid>
+
+        <Label x:Name="incorrectLabel" Content="The username or password you entered is incorrect" VerticalAlignment="Center" HorizontalAlignment="Center"
+               Margin="60,250,0,0" Foreground="Red" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>
