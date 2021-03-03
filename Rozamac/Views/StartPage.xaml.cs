@@ -46,11 +46,7 @@ namespace Rozamac.Views
 
             Dispatcher.Invoke(() =>
             {
-                try
-                {
-                    gMakinaDurumWord.Content = list[0].ToString();
-                }
-                catch { }
+                gMakinaDurumWord.Content = list[0].ToString();
             });
         }
 

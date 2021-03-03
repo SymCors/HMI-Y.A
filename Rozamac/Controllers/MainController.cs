@@ -60,10 +60,9 @@ namespace Rozamac.Controllers
             catch { timer.Stop(); return false; }
         }
 
-        #region StartPage
         public void StartVarList()
         {
-            startList_.Add("@GlobalVariables.gMakinaDurumWord");
+            startList_.Add("@GlobalVariables.gMakinaDrumWord");
             _handler.Subscribe(_startPageVariables, startList_);
         }
 
@@ -73,15 +72,15 @@ namespace Rozamac.Controllers
             startEvent.sendEventInfo(variables);
         }
 
-        #endregion
 
-        #region Main
+
+
         public void MainVarList()
         {
             varList_.Add("@GlobalVariables.gMakinaActualHiz");
             varList_.Add("@GlobalVariables.gAnaHizSetMdk");
             varList_.Add("@GlobalVariables.gOtomatikHiz");
-            varList_.Add("@GlobalVariables.gMakinaDurumWord");
+            varList_.Add("@GlobalVariables.gMakinaDrumWord");
             _handler.Subscribe(_mainTemplateVariables, varList_);
         }
 
@@ -91,14 +90,13 @@ namespace Rozamac.Controllers
             mainEvent.sendEventInfo(variables);
         }
 
-        internal void Write_gOtomatikGit(bool gOtomatikGitBool)
+        public void Write_gOtomatikGit(bool gOtomatikGitBool)
         {
             _handler.WriteVariableValue("@GlobalVariables.gOtomatikGit", gOtomatikGitBool);
         }
 
-        #endregion
 
-        #region HomePage
+
 
         public void HomePageVarList()
         {
@@ -118,7 +116,7 @@ namespace Rozamac.Controllers
             varList2_.Add("@GlobalVariables.gCozguSetKg");
             varList2_.Add("@GlobalVariables.gCozguActKg");
             varList2_.Add("@GlobalVariables.gCapSet");
-            varList2_.Add("@GlobalVariables.gCozguActCap");
+            varList2_.Add("@GlobalVariables.gCozucuActCap");
 
             varList2_.Add("@GlobalVariables.SAxis1.Act.Torque");
             varList2_.Add("@GlobalVariables.SAxis2.Act.Torque");
@@ -134,79 +132,80 @@ namespace Rozamac.Controllers
             homePageEvent.sendEventInfo(variables);
         }
 
-        internal void Write_gAdetSet(double value)
+        public void Write_gAdetSet(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gAdetSet", value);
         }
 
-        internal void Write_gMetrajSet(double value)
+        public void Write_gMetrajSet(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gMetrajSet", value);
         }
 
-        internal void Write_gMetrajReset(bool value)
+        public void Write_gMetrajReset(bool value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gMetrajReset", value);
         }
 
-        internal void Write_gFanStart(bool value)
+        public void Write_gFanStart(bool value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gFanStart", value);
         }
 
-        internal void Write_gTunelIsiSet(double value)
+        public void Write_gTunelIsiSet(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gTunelIsiSet", value);
         }
 
-        internal void Write_gRenkIsiSet(double value)
+        public void Write_gRenkIsiSet(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gRenkIsiSet", value);
         }
 
-        internal void Write_gSarici1SetKg(int value)
+        public void Write_gSarici1SetKg(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gSarici1SetKg", value);
         }
 
-        internal void Write_gSarici1Enable(bool value)
+        public void Write_gSarici1Enable(bool value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gSarici1Enable", value);
         }
 
-        internal void Write_gSarici2SetKg(int value)
+        public void Write_gSarici2SetKg(int value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gSarici2SetKg", value);
         }
 
-        internal void Write_gSarici2Enable(bool value)
+        public void Write_gSarici2Enable(bool value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gSarici2Enable", value);
         }
 
-        internal void Write_gCozguSetKg(int value)
+        public void Write_gCozguSetKg(int value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gCozguSetKg", value);
         }
 
-        internal void Write_gCapSet(double value)
+        public void Write_gCapSet(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gCapSet", value);
         }
 
-        internal void Write_gSarici1Yon(bool value)
+        public void Write_gSarici1Yon(bool value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gSarici1Yon", value);
         }
 
-        internal void Write_gMakinaCalismaModu(double value)
+        public void Write_gMakinaCalismaModu(double value)
         {
             _handler.WriteVariableValue("@GlobalVariables.gMakinaCalismaModu", value);
         }
 
-        #endregion
 
-        #region LineSchema
+
+
+
 
         public void LineSchemaVarList()
         {
@@ -219,7 +218,5 @@ namespace Rozamac.Controllers
             IList<object> variables = _handler.ReadVariableValues(_lineSchemaVariables);
             lineSchemaEvent.sendEventInfo(variables);
         }
-
-        #endregion
     }
 }

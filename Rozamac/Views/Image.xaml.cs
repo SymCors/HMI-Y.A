@@ -51,28 +51,28 @@ namespace Rozamac.Views
             {
                 try
                 {
-                    gActualBaskiAdet.Text = list[0].ToString();
-                    gAdetSet.Text = list[1].ToString();
-                    gActualMetraj.Text = list[2].ToString();
-                    gMetrajSet.Text = list[3].ToString();
-                    gTunelIsiSet.Text = list[4].ToString();
-                    gTunelIsiActual.Text = list[5].ToString();
-                    gRenkIsiSet.Text = list[6].ToString();
-                    gRenkIsiActual.Text = list[7].ToString();
+                    gActualBaskiAdet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[0]));
+                    gAdetSet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[1]));
+                    gActualMetraj.Text = String.Format("{0:0.0}", Convert.ToDouble(list[2]));
+                    gMetrajSet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[3]));
+                    gTunelIsiSet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[4]));
+                    gTunelIsiActual.Text = String.Format("{0:0.0}", Convert.ToDouble(list[5]));
+                    gRenkIsiSet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[6]));
+                    gRenkIsiActual.Text = String.Format("{0:0.0}", Convert.ToDouble(list[7]));
 
-                    gSarici1SetKg.Text = list[8].ToString();
-                    gSarici1ActKg.Text = list[9].ToString();
-                    gSarici2SetKg.Text = list[10].ToString();
-                    gSarici2ActKg.Text = list[11].ToString();
-                    gCozguSetKg.Text = list[12].ToString();
-                    gCozguActKg.Text = list[13].ToString();
-                    gCapSet.Text = list[14].ToString();
-                    gCozguActCap.Text = list[14].ToString();
+                    gSarici1SetKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[8]));
+                    gSarici1ActKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[9]));
+                    gSarici2SetKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[10]));
+                    gSarici2ActKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[11]));
+                    gCozguSetKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[12]));
+                    gCozguActKg.Text = String.Format("{0:0.0}", Convert.ToDouble(list[13]));
+                    gCapSet.Text = String.Format("{0:0.0}", Convert.ToDouble(list[14]));
+                    gCozguActCap.Text = String.Format("{0:0.0}", Convert.ToDouble(list[15]));
 
-                    SAxis1.Text = list[15].ToString();
-                    SAxis2.Text = list[16].ToString();
-                    SAxis3.Text = list[17].ToString();
-                    SAxis4.Text = list[18].ToString();
+                    SAxis1.Text = String.Format("{0:0.0}", Convert.ToDouble(list[16]));
+                    SAxis2.Text = String.Format("{0:0.0}", Convert.ToDouble(list[17]));
+                    SAxis3.Text = String.Format("{0:0.0}", Convert.ToDouble(list[18]));
+                    SAxis4.Text = String.Format("{0:0.0}", Convert.ToDouble(list[19]));
                 }
                 catch { }
             });
@@ -80,7 +80,7 @@ namespace Rozamac.Views
 
         private void gAdetSet_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gAdetSet, 400, 150, 6, "123", "6432");
+            Keypad keypad = openKeypad(gAdetSet, 0, 40, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gAdetSet(Convert.ToDouble(keypad.Result.ToString()));
@@ -89,7 +89,7 @@ namespace Rozamac.Views
 
         private void gMetrajSet_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gMetrajSet, 772, 150, 6, "123", "6432");
+            Keypad keypad = openKeypad(gMetrajSet, 0, 40, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gMetrajSet(Convert.ToDouble(keypad.Result.ToString()));
@@ -120,7 +120,7 @@ namespace Rozamac.Views
 
         private void gTunelIsiSet_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gTunelIsiSet, 215, 140, 6, "123", "6432");
+            Keypad keypad = openKeypad(gTunelIsiSet, 0, 40, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gTunelIsiSet(Convert.ToDouble(keypad.Result.ToString()));
@@ -129,7 +129,7 @@ namespace Rozamac.Views
 
         private void gRenkIsiSet_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gRenkIsiSet, 1123, 220, 6, "562", "4564");
+            Keypad keypad = openKeypad(gRenkIsiSet, 0, 40, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gRenkIsiSet(Convert.ToDouble(keypad.Result.ToString()));
@@ -138,10 +138,10 @@ namespace Rozamac.Views
 
         private void gSarici1SetKg_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gSarici1SetKg, 105, 485, 6, "123", "6432");
+            Keypad keypad = openKeypad(gSarici1SetKg, 0, 80, 6, "0", "100");
             if (keypad.ShowDialog() == true)
             {
-                mainController.Write_gSarici1SetKg(Convert.ToInt32(keypad.Result.ToString()));
+                mainController.Write_gSarici1SetKg(Convert.ToDouble(keypad.Result));
             }
         }
 
@@ -153,7 +153,7 @@ namespace Rozamac.Views
 
         private void gSarici2SetKg_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gSarici2SetKg, 250, 600, 6, "123", "6432");
+            Keypad keypad = openKeypad(gSarici2SetKg, 135, -300, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gSarici2SetKg(Convert.ToInt32(keypad.Result.ToString()));
@@ -168,7 +168,7 @@ namespace Rozamac.Views
 
         private void gCozguSetKg_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gCozguSetKg, 570, 575, 6, "123", "6432");
+            Keypad keypad = openKeypad(gCozguSetKg, 135, -200, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gCozguSetKg(Convert.ToInt32(keypad.Result.ToString()));
@@ -176,7 +176,7 @@ namespace Rozamac.Views
         }
         private void gCapSet_TouchDown(object sender, TouchEventArgs e)
         {
-            Keypad keypad = openKeypad(gCapSet, 695, 450, 6, "123", "6432");
+            Keypad keypad = openKeypad(gCapSet, 135, -300, 6, "123", "6432");
             if (keypad.ShowDialog() == true)
             {
                 mainController.Write_gCapSet(Convert.ToDouble(keypad.Result.ToString()));

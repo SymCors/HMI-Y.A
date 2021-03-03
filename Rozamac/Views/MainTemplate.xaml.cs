@@ -91,20 +91,20 @@ namespace Rozamac.Views
         {
             list = e.list;
 
-            Dispatcher.Invoke(() =>
+            try
             {
-                try
+                Dispatcher.Invoke(() =>
                 {
-                    gMakinaActualHiz.Text = list[0].ToString();
-                    gAnaHizSetMdk.Text = list[1].ToString();
-                    gOtomatikHiz.Text = list[2].ToString();
-                    gMakinaDurumWord.Content = list[3].ToString();
+                    gMakinaActualHiz.Text = String.Format("{0:0.0}", Convert.ToDouble(list[0]));
+                    gAnaHizSetMdk.Text = String.Format("{0:0.0}", Convert.ToDouble(list[1]));
+                    gOtomatikHiz.Text = String.Format("{0:0.0}", Convert.ToDouble(list[2]));
+                    gMakinaDurumWord.Content = String.Format("{0:0.0}", Convert.ToDouble(list[3]));
 
                     gMakinaActualHizValue = Convert.ToDouble(list[0]);
                     gAnaHizSetMdkValue = Convert.ToDouble(list[1]);
-                }
-                catch { }
-            });
+                });
+            }
+            catch { }
         }
 
         private void Timer_Work(object sender, EventArgs e)

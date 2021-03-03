@@ -95,6 +95,51 @@ namespace KeyPad
             this.DragMove();
         }
 
+        private void button_TouchDown(object sender, RoutedEventArgs e)
+        {
+            if (newOpened)
+            {
+                Result = "";
+                newOpened = false;
+            }
+            Button button = sender as Button;
+            switch (button.CommandParameter.ToString())
+            {
+                case "ESC":
+                    this.DialogResult = false;
+                    break;
+
+                case "RETURN":
+                    try
+                    {
+                        double value = Convert.ToDouble(Result);
+                        if (value > double.Parse(max))
+                        {
+                            Result = max.ToString();
+                        }
+                        else if (value < double.Parse(min))
+                        {
+                            Result = min.ToString();
+                        }
+                    }
+                    catch { Result = value; }
+                    this.DialogResult = true;
+                    break;
+
+                case "BACK":
+                    if (Result.Length > 0)
+                        Result = Result.Remove(Result.Length - 1);
+                    break;
+
+                default:
+                    if (Result == null || Result.Length <= maxLength)
+                    {
+                        Result += button.Content.ToString();
+                    }
+                    break;
+            }
+        }
+
         #region INotifyPropertyChanged members
 
         public event PropertyChangedEventHandler PropertyChanged;

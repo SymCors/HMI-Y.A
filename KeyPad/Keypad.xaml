@@ -122,12 +122,12 @@
 
         <Grid  Grid.Row="2">
             <Border  Style="{StaticResource buttonBorder}" Background="Black" CornerRadius="4" />
-            <Button Name="button5" Background="WhiteSmoke" BorderThickness="1"
+            <Button Name="button5" Background="WhiteSmoke" BorderThickness="1" Click="button_TouchDown"
 				Command="{Binding Path=PressAndRelease}" CommandParameter="NUMPAD7" TouchDown="button_TouchDown">7</Button>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
             <Border  Style="{StaticResource buttonBorder}" Background="Black" CornerRadius="4" />
-            <Button x:Name="button6" Background="WhiteSmoke"
+            <Button x:Name="button6" Background="WhiteSmoke" Click="button_TouchDown"
 				Command="{Binding PressAndRelease}" CommandParameter="NUMPAD8" TouchDown="button_TouchDown" BorderThickness="1" Content="8" />
         </Grid>
         <Grid Grid.Column="2" Grid.Row="2">
@@ -178,12 +178,12 @@
         </Grid>
         <Grid Grid.ColumnSpan="2" Grid.Row="5">
             <Border  Style="{StaticResource buttonBorder}" Background="Black" CornerRadius="4" />
-            <Button x:Name="button17" Background="WhiteSmoke"
+            <Button x:Name="button17" Background="WhiteSmoke" Click="button_TouchDown"
 				Command="{Binding PressAndRelease}" CommandParameter="NUMPAD0" TouchDown="button_TouchDown" Content="0"  />
         </Grid>
         <Grid Grid.Column="2" Grid.Row="5">
             <Border  Style="{StaticResource buttonBorder}" Background="Black" CornerRadius="4" />
-            <Button x:Name="button19" Background="WhiteSmoke"
+            <Button x:Name="button19" Background="WhiteSmoke" Click="button_TouchDown"
 				Command="{Binding PressAndRelease}" CommandParameter="DECIMAL"	TouchDown="button_TouchDown" Content="." />
         </Grid>
         <Grid Grid.ColumnSpan="4">
