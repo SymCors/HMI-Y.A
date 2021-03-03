@@ -41,13 +41,13 @@
             <GroupBox Name="LengtAmountGroup" BorderBrush="Transparent" Margin="0, 20, 0, 0">
                 <Grid>
                     <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gActualBaskiAdet_TouchDown">
+                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gAdetSet_TouchDown">
                         <StackPanel>
                             <TextBlock  Padding="5" Foreground="Black" 
                  Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBox  Padding="5, 0" Foreground="Black" x:Name="gActualBaskiAdet" IsReadOnly="True" Focusable="False"
-                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                            <TextBox  Padding="5, 0" Foreground="Black" x:Name="gAdetSet" IsReadOnly="True" Focusable="False"
+                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" BorderThickness="0"/>
                         </StackPanel>
                     </Border>
 
@@ -58,13 +58,13 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Ad." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gAdetSet"
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gActualBaskiAdet"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
 
-                    <Button x:Name="AmountReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64"/>
+                    <Button x:Name="gMetrajReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64" TouchDown="gMetrajReset_TouchDown"/>
 
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Height="30" Background="Gainsboro" Margin="0,0,0,0">
                         <Label Content="Baskı Adedi" Foreground="Black" FontSize="17" FontFamily="Arial"/>
@@ -78,14 +78,14 @@
             <GroupBox Name="HeaderGroup" VerticalAlignment="Top" HorizontalAlignment="Right" BorderBrush="Transparent" Margin="0, 20, 0, 0">
                 <Grid>
                     <Border BorderBrush="Orange" BorderThickness="2" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gActualMetraj_TouchDown">
+                Margin="0,50,0,0" Width="105" Height="64" TouchDown="gMetrajSet_TouchDown">
                         <StackPanel>
 
                             <TextBlock  Padding="5" Foreground="Black" 
                  Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBox  Padding="5, 0" Foreground="Black"  x:Name="gActualMetraj" IsReadOnly="True" Focusable="False"
-                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
+                            <TextBox  Padding="5, 0" Foreground="Black"  x:Name="gMetrajSet" IsReadOnly="True" Focusable="False"
+                 Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" BorderThickness="0"/>
                         </StackPanel>
                     </Border>
 
@@ -96,13 +96,13 @@
                             <TextBlock  Padding="5" Foreground="White" 
                  Text="Mt." TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
 
-                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gMetrajSet"
+                            <TextBlock  Padding="5, 0" Foreground="White" x:Name="gActualMetraj"
                  Text="0.0" TextAlignment="Center" FontSize="19" FontFamily="Arial" Height="30" />
                         </StackPanel>
                     </Border>
 
                     <Button x:Name="PressureReset" Content="Reset" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64"/>
+                   FontSize="20" Foreground="Black" Margin="240,50,0,0" Width="105" Height="64" TouchDown="gMetrajReset_TouchDown"/>
 
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left" Width="345" Height="30" Background="Gainsboro" Margin="0,0,0,0">
                         <Label Content="Baskı Metrajı" Foreground="Black" FontSize="17" FontFamily="Arial"/>
@@ -115,8 +115,8 @@
 
         </Grid>
 
-        <Button x:Name="workingMode" Content="4+0 ÇALIŞMA MODU AKTİF" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Margin="550,297,0,0" Width="433" TouchDown="WorkingMode_TouchDown" Height="40"/>
+        <Button x:Name="gMakinaCalismaModu" Content="4+0 ÇALIŞMA MODU AKTİF" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Margin="550,297,0,0" Width="433" TouchDown="gMakinaCalismaModu_TouchDown" Height="40"/>
 
 
         <GroupBox Name="Fan1Group" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="131,170,0,0" BorderBrush="Transparent" BorderThickness="0">
@@ -126,7 +126,7 @@
 
                 <Button x:Name="gTunelIsi" Content="Fan 1" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Height="33" 
-                        TouchDown="gTunelIsi_TouchDown"/>
+                        TouchDown="gFanStart_TouchDown"/>
 
                 <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
                   BorderThickness="1" TouchDown="gTunelIsiSet_TouchDown" Background="White">
@@ -156,7 +156,7 @@
 
                 <Button x:Name="gRenkIsi" Content="Fan 2" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="20" Foreground="Black" Margin="120,50,0,0" Width="141" Height="33" 
-                        TouchDown="gRenkIsi_TouchDown"/>
+                        TouchDown="gFanStart_TouchDown"/>
 
                 <Border BorderBrush="Orange" Width="100" VerticalAlignment="Top"  HorizontalAlignment="Left" 
                   BorderThickness="1" TouchDown="gRenkIsiSet_TouchDown" Background="White">
@@ -267,8 +267,8 @@
         </GroupBox>
 
         <StackPanel Margin="56,382,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="leftUp" Content="Kapalı" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Height="39" />
+            <Button x:Name="gSarici1Enable" Content="Kapalı" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Height="39" TouchDown="gSarici1Enable_TouchDown"/>
 
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
@@ -316,8 +316,8 @@
         </StackPanel>
 
         <StackPanel Margin="56,725,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="leftDown" Content="Kapalı" Padding="10, 5"
-                   FontSize="20" Foreground="Black" Height="39" />
+            <Button x:Name="gSarici2Enable" Content="Kapalı" Padding="10, 5"
+                   FontSize="20" Foreground="Black" Height="39" TouchDown="gSarici2Enable_TouchDown"/>
 
 
             <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,5,0,5">
@@ -411,9 +411,9 @@
             </WrapPanel>
         </StackPanel>
 
-        <Button x:Name="InsideButton" Content="&lt;-- İçeri" Background="Red" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
+        <Button x:Name="gSarici1Yon" Content="&lt;-- İçeri" Background="Red" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="10, 5"
                    FontSize="23" Foreground="White" Margin="76,0,0,301.2" Width="128" FontFamily="Arial" Height="40"
-                TouchDown="InsideButton_TouchDown"/>
+                TouchDown="gSarici1Yon_TouchDown"/>
 
 
         <StackPanel Margin="643,696,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">

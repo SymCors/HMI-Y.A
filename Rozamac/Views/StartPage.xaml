@@ -108,7 +108,8 @@
 
         <Border Margin="15,0,130,20" BorderBrush="#68838B" BorderThickness="2" VerticalAlignment="Bottom" Height="35"
                 Background="White">
-            <Label Content="Makinada Alarm Yok ve Ana Starta Hazır" FontSize="17" FontFamily="Times New Roman" />
+            <Label Content="Makinada Alarm Yok ve Ana Starta Hazır" FontSize="17" FontFamily="Times New Roman" 
+                   x:Name="gMakinaDurumWord"/>
 
         </Border>
 

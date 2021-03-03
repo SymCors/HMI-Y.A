@@ -25,13 +25,8 @@ namespace Rozamac.Views
         public MainWindow()
         {
             InitializeComponent();
-            ContentArea.Content = new StartPage(ContentArea);
             MainController mainController = new MainController();
-        }
-
-        private void MainEvent_event1(object sender, MainEvent e)
-        {
-
+            ContentArea.Content = new StartPage(ContentArea, mainController);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

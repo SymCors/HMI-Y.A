@@ -1,4 +1,5 @@
 ﻿using EasyModbus;
+using Rozamac.Controllers;
 using Rozamac.Models;
 using System;
 using System.Collections.Generic;
@@ -19,16 +20,18 @@ namespace Rozamac.Views
     {
         ModbusClient modbusClient;
         ContentControl content;
+        MainController main;
 
         private PLCIHandler handler_ = new PLCIHandler();
         private List<string> varList_ = new List<string>();
         private string subscriptionName_ = "MyPLCVariables";
         private bool clicked;
 
-        public ProgramSettings(ContentControl contentControl)
+        public ProgramSettings(ContentControl contentControl, MainController mainController)
         {
             InitializeComponent();
             content = contentControl;
+            main = mainController;
 
             PortBox.Text = Properties.Settings.Default.Port;
             IpAddress.Text = Properties.Settings.Default.Ip;
@@ -45,7 +48,7 @@ namespace Rozamac.Views
                 Properties.Settings.Default.Port = PortBox.Text;
                 Properties.Settings.Default.Ip = IpAddress.Text;
                 Properties.Settings.Default.Save();
-                content.Content = new StartPage(content);
+                content.Content = new StartPage(content, main);
             }
         }
 

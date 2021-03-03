@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rozamac.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,13 @@ namespace Rozamac.Views
     public partial class Alarms : UserControl
     {
         ContentControl content;
-        public Alarms(ContentControl contentControl)
+        MainController mainController;
+
+        public Alarms(ContentControl contentControl, MainController main)
         {
             InitializeComponent();
             content = contentControl;
+            mainController = main;
         }
     }
 }

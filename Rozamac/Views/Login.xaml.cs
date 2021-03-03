@@ -1,4 +1,5 @@
-﻿using Rozamac.Models;
+﻿using Rozamac.Controllers;
+using Rozamac.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +24,19 @@ namespace Rozamac.Views
     public partial class Login : UserControl
     {
         ContentControl content;
+        MainController mainController;
         string currentSelected = "PasswordBox";
 
-        public Login(ContentControl contentControl)
+        public Login(ContentControl contentControl, MainController main)
         {
             InitializeComponent();
             content = contentControl;
+            mainController = main;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            content.Content = new StartPage(content);
+            content.Content = new StartPage(content, mainController);
         }
 
         private void PasswordChecked(object sender, RoutedEventArgs e)
@@ -69,13 +72,13 @@ namespace Rozamac.Views
             {
                 Properties.Settings.Default.SignedIn = true;
                 Properties.Settings.Default.Save();
-                content.Content = new StartPage(content);
+                content.Content = new StartPage(content, mainController);
             }
             else if (username.Text.ToLower() == "admin" && Password.Password == "unity1453")
             {
                 Properties.Settings.Default.Admin = true;
                 Properties.Settings.Default.Save();
-                content.Content = new StartPage(content);
+                content.Content = new StartPage(content, mainController);
             }
             incorrectLabel.Visibility = Visibility.Visible;
         }

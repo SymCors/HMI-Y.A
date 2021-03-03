@@ -1,4 +1,5 @@
-﻿using Rozamac.Events;
+﻿using Rozamac.Controllers;
+using Rozamac.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,14 +27,22 @@ namespace Rozamac.Views
         ContentControl content;
         private string selected = "HomePage";
         private string selectedInner = "Image";
-        public MainTemplate(ContentControl contentControl, string contentArea)
+        MainController mainController;
+        bool gOtomatikGitBool;
+
+
+        private double _gMakinaActualHizValue, _gAnaHizSetMdkValue;
+
+        public MainTemplate(ContentControl contentControl, string contentArea, MainController main)
         {
             InitializeComponent();
 
             MainEvent.event1 -= MainEvent_event1;
             MainEvent.event1 += MainEvent_event1;
 
+            mainController = main;
             content = contentControl;
+
             time.Text = DateTime.Now.ToString("HH:mm:ss");
             date.Text = DateTime.Now.ToString("dd MMM yyyy");
             DispatcherTimer timer = new DispatcherTimer();
@@ -47,7 +56,7 @@ namespace Rozamac.Views
 
             if (contentArea == "Alarms")
             {
-                ContentArea.Content = new Alarms(content);
+                ContentArea.Content = new Alarms(content, mainController);
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
                 LineSchema.Visibility = Visibility.Collapsed;
@@ -56,7 +65,7 @@ namespace Rozamac.Views
             }
             else if(contentArea == "Settings")
             {
-                ContentArea.Content = new Settings(content);
+                ContentArea.Content = new Settings(content, mainController);
                 SetChoosen(SettingsRect, SettingsTriangle);
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
@@ -65,7 +74,7 @@ namespace Rozamac.Views
             }
             else if (contentArea == "ProgramSettings")
             {
-                ContentArea.Content = new ProgramSettings(content);
+                ContentArea.Content = new ProgramSettings(content, mainController);
                 SetChoosen(ProgramSettingsRect, ProgramSettingsTriangle);
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
@@ -74,7 +83,7 @@ namespace Rozamac.Views
             }
             else
             {
-                ContentArea.Content = new Image(content);
+                ContentArea.Content = new Image(content, mainController);
             }
         }
 
@@ -86,7 +95,13 @@ namespace Rozamac.Views
             {
                 try
                 {
-                    actualSpeed.Text = list[0].ToString();
+                    gMakinaActualHiz.Text = list[0].ToString();
+                    gAnaHizSetMdk.Text = list[1].ToString();
+                    gOtomatikHiz.Text = list[2].ToString();
+                    gMakinaDurumWord.Content = list[3].ToString();
+
+                    gMakinaActualHizValue = Convert.ToDouble(list[0]);
+                    gAnaHizSetMdkValue = Convert.ToDouble(list[1]);
                 }
                 catch { }
             });
@@ -100,7 +115,7 @@ namespace Rozamac.Views
 
         private void Rozamac_Click(object sender, RoutedEventArgs e)
         {
-            content.Content = new StartPage(content);
+            content.Content = new StartPage(content, mainController);
         }
 
         private void HomePage_Click(object sender, RoutedEventArgs e)
@@ -124,17 +139,17 @@ namespace Rozamac.Views
             switch (selectedInner)
             {
                 case "Image":
-                    ContentArea.Content = new Image(content);
+                    ContentArea.Content = new Image(content, mainController);
                     selectedInner = "Image";
                     SetChoosen(ImageRectangle, ImageTriangle);
                     break;
                 case "NumberLogic":
-                    ContentArea.Content = new NumberLogic(content);
+                    ContentArea.Content = new NumberLogic(content, mainController);
                     selectedInner = "NumberLogic";
                     SetChoosen(NumberLogicRect, NumberLogicTriangle);
                     break;
                 case "LineSchema":
-                    ContentArea.Content = new LineSchema(content);
+                    ContentArea.Content = new LineSchema(content, mainController);
                     selectedInner = "LineSchema";
                     SetChoosen(LineRect, LineTriangle);
                     break;
@@ -145,7 +160,7 @@ namespace Rozamac.Views
         {
             if (selectedInner != "Image")
             {
-                ContentArea.Content = new Image(content);
+                ContentArea.Content = new Image(content, mainController);
                 SetChoosen(ImageRectangle, ImageTriangle);
                 HomeRect.Fill = Brushes.Orange;
                 HomeTriangle.Visibility = Visibility.Visible;
@@ -157,7 +172,7 @@ namespace Rozamac.Views
         {
             if (selectedInner != "NumberLogic")
             {
-                ContentArea.Content = new NumberLogic(content);
+                ContentArea.Content = new NumberLogic(content, mainController);
                 SetChoosen(NumberLogicRect, NumberLogicTriangle);
                 HomeRect.Fill = Brushes.Orange;
                 HomeTriangle.Visibility = Visibility.Visible;
@@ -169,7 +184,7 @@ namespace Rozamac.Views
         {
             if (selectedInner != "LineSchema")
             {
-                ContentArea.Content = new LineSchema(content);
+                ContentArea.Content = new LineSchema(content, mainController);
                 SetChoosen(LineRect, LineTriangle);
                 HomeRect.Fill = Brushes.Orange;
                 HomeTriangle.Visibility = Visibility.Visible;
@@ -181,7 +196,7 @@ namespace Rozamac.Views
         {
             if (selected != "Alarm")
             {
-                ContentArea.Content = new Alarms(content);
+                ContentArea.Content = new Alarms(content, mainController);
 
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
@@ -195,7 +210,7 @@ namespace Rozamac.Views
         {
             if (selected != "Settings" && Properties.Settings.Default.SignedIn)
             {
-                ContentArea.Content = new Settings(content);
+                ContentArea.Content = new Settings(content, mainController);
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
                 LineSchema.Visibility = Visibility.Collapsed;
@@ -206,16 +221,11 @@ namespace Rozamac.Views
 
         private void Administrator_Click(object sender, RoutedEventArgs e)
         {
-            UserSelectionPage userSelectionPage = new UserSelectionPage(content);
+            UserSelectionPage userSelectionPage = new UserSelectionPage(content, mainController);
             userSelectionPage.ShowDialog();
         }
 
         private void Warning_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void AutomaticSpeed_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -246,12 +256,36 @@ namespace Rozamac.Views
         {
             if (selected != "ProgramSettings" && Properties.Settings.Default.Admin)
             {
-                ContentArea.Content = new ProgramSettings(content);
+                ContentArea.Content = new ProgramSettings(content, mainController);
                 Image.Visibility = Visibility.Collapsed;
                 NumberLogic.Visibility = Visibility.Collapsed;
                 LineSchema.Visibility = Visibility.Collapsed;
                 SetChoosen(ProgramSettingsRect, ProgramSettingsTriangle);
                 selected = "Settings";
+            }
+        }
+
+        private void gOtomatikGit_TouchDown(object sender, TouchEventArgs e)
+        {
+            gOtomatikGitBool = !gOtomatikGitBool;
+            mainController.Write_gOtomatikGit(gOtomatikGitBool);
+        }
+
+        public double gMakinaActualHizValue
+        {
+            get { return _gMakinaActualHizValue; }
+            set
+            {
+                _gMakinaActualHizValue = value;
+            }
+        }
+
+        public double gAnaHizSetMdkValue
+        {
+            get { return _gAnaHizSetMdkValue; }
+            set
+            {
+                _gAnaHizSetMdkValue = value;
             }
         }
     }

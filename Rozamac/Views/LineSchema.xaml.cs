@@ -1,4 +1,5 @@
-﻿using Rozamac.Events;
+﻿using Rozamac.Controllers;
+using Rozamac.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +24,9 @@ namespace Rozamac.Views
     {
         public IList<object> list;
         ContentControl content;
+        MainController mainController;
 
-        public LineSchema(ContentControl contentControl)
+        public LineSchema(ContentControl contentControl, MainController main)
         {
             InitializeComponent();
 
@@ -32,6 +34,7 @@ namespace Rozamac.Views
             LineSchemaEvent.event1 += LineSchemaEvent_event1;
 
             content = contentControl;
+            mainController = main;
         }
 
         private void LineSchemaEvent_event1(object sender, LineSchemaEvent e)

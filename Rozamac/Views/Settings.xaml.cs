@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rozamac.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,12 @@ namespace Rozamac.Views
     public partial class Settings : UserControl
     {
         ContentControl content;
-        public Settings(ContentControl contentControl)
+        MainController main;
+        public Settings(ContentControl contentControl, MainController mainController)
         {
             InitializeComponent();
             content = contentControl;
+            main = mainController;
         }
     }
 }

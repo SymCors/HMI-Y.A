@@ -9,14 +9,17 @@ namespace Rozamac.Controllers
 {
     public class MainController
     {
+        StartEvent startEvent = new StartEvent();
         MainEvent mainEvent = new MainEvent();
         HomePageEvent homePageEvent = new HomePageEvent();
         LineSchemaEvent lineSchemaEvent = new LineSchemaEvent();
 
+        private List<string> startList_ = new List<string>();
         private List<string> varList_ = new List<string>();
         private List<string> varList2_ = new List<string>();
         private List<string> LineSchemaList = new List<string>();
 
+        private string _startPageVariables = "StartPageVariables";
         private string _mainTemplateVariables = "MainTemplateVariables";
         private string _homePageVariables = "HomePageVariables";
         private string _lineSchemaVariables = "LineSchemaVariables";
@@ -32,6 +35,7 @@ namespace Rozamac.Controllers
 
         private void Do_Work(object sender, ElapsedEventArgs e)
         {
+            ReadStartPage();
             ReadMainTemplate();
             ReadHomePage();
             ReadLineSchema();
@@ -45,6 +49,7 @@ namespace Rozamac.Controllers
             {
                 _handler.Connect("192.168.0.1");
 
+                StartVarList();
                 MainVarList();
                 HomePageVarList();
 
@@ -55,10 +60,28 @@ namespace Rozamac.Controllers
             catch { timer.Stop(); return false; }
         }
 
+        #region StartPage
+        public void StartVarList()
+        {
+            startList_.Add("@GlobalVariables.gMakinaDurumWord");
+            _handler.Subscribe(_startPageVariables, startList_);
+        }
+
+        public void ReadStartPage()
+        {
+            IList<object> variables = _handler.ReadVariableValues(_startPageVariables);
+            startEvent.sendEventInfo(variables);
+        }
+
+        #endregion
+
         #region Main
         public void MainVarList()
         {
-            varList_.Add("@GlobalVariables.SAxis2.Act.Torque");
+            varList_.Add("@GlobalVariables.gMakinaActualHiz");
+            varList_.Add("@GlobalVariables.gAnaHizSetMdk");
+            varList_.Add("@GlobalVariables.gOtomatikHiz");
+            varList_.Add("@GlobalVariables.gMakinaDurumWord");
             _handler.Subscribe(_mainTemplateVariables, varList_);
         }
 
@@ -66,6 +89,11 @@ namespace Rozamac.Controllers
         {
             IList<object> variables = _handler.ReadVariableValues(_mainTemplateVariables);
             mainEvent.sendEventInfo(variables);
+        }
+
+        internal void Write_gOtomatikGit(bool gOtomatikGitBool)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gOtomatikGit", gOtomatikGitBool);
         }
 
         #endregion
@@ -92,6 +120,10 @@ namespace Rozamac.Controllers
             varList2_.Add("@GlobalVariables.gCapSet");
             varList2_.Add("@GlobalVariables.gCozguActCap");
 
+            varList2_.Add("@GlobalVariables.SAxis1.Act.Torque");
+            varList2_.Add("@GlobalVariables.SAxis2.Act.Torque");
+            varList2_.Add("@GlobalVariables.SAxis3.Act.Torque");
+            varList2_.Add("@GlobalVariables.SAxis4.Act.Torque");
 
             _handler.Subscribe(_homePageVariables, varList2_);
         }
@@ -100,6 +132,76 @@ namespace Rozamac.Controllers
         {
             IList<object> variables = _handler.ReadVariableValues(_homePageVariables);
             homePageEvent.sendEventInfo(variables);
+        }
+
+        internal void Write_gAdetSet(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gAdetSet", value);
+        }
+
+        internal void Write_gMetrajSet(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gMetrajSet", value);
+        }
+
+        internal void Write_gMetrajReset(bool value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gMetrajReset", value);
+        }
+
+        internal void Write_gFanStart(bool value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gFanStart", value);
+        }
+
+        internal void Write_gTunelIsiSet(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gTunelIsiSet", value);
+        }
+
+        internal void Write_gRenkIsiSet(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gRenkIsiSet", value);
+        }
+
+        internal void Write_gSarici1SetKg(int value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gSarici1SetKg", value);
+        }
+
+        internal void Write_gSarici1Enable(bool value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gSarici1Enable", value);
+        }
+
+        internal void Write_gSarici2SetKg(int value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gSarici2SetKg", value);
+        }
+
+        internal void Write_gSarici2Enable(bool value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gSarici2Enable", value);
+        }
+
+        internal void Write_gCozguSetKg(int value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gCozguSetKg", value);
+        }
+
+        internal void Write_gCapSet(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gCapSet", value);
+        }
+
+        internal void Write_gSarici1Yon(bool value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gSarici1Yon", value);
+        }
+
+        internal void Write_gMakinaCalismaModu(double value)
+        {
+            _handler.WriteVariableValue("@GlobalVariables.gMakinaCalismaModu", value);
         }
 
         #endregion
@@ -119,11 +221,5 @@ namespace Rozamac.Controllers
         }
 
         #endregion
-
-        public void Write()
-        {
-            _handler.WriteVariableValue("@GlobalVariables.Deneme", 21.0f);
-            //_handler.WriteVariableValue("@GlobalVariables.Denem1", true);
-        }
     }
 }

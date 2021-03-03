@@ -1,4 +1,5 @@
 ﻿using KeyPad;
+using Rozamac.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +29,13 @@ namespace Rozamac.Views
         bool winderCenter, unwinderCenter, winderDirectionClicked, winderManualClicked, unwinderManualClicked;
         int value = 0;
         int value2 = 0;
+        MainController mainController;
 
-        public NumberLogic(ContentControl contentControl)
+        public NumberLogic(ContentControl contentControl, MainController main)
         {
             InitializeComponent();
             content = contentControl;
+            mainController = main;
         }
 
         private void color1_TouchDown(object sender, TouchEventArgs e)

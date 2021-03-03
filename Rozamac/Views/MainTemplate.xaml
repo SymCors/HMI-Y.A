@@ -150,7 +150,7 @@
         <Border Margin="250,0,130,20" BorderBrush="#68838B" BorderThickness="2" VerticalAlignment="Bottom" Height="35"
                 Background="White">
             <Label Content="Makinada Alarm Yok ve Çalışmaya Hazır" FontSize="17" FontFamily="Times New Roman"
-                   FontWeight="600" />
+                   FontWeight="Bold" x:Name="gMakinaDurumWord"/>
 
         </Border>
 
@@ -160,11 +160,12 @@
 
 
             <TextBlock Text="Aktüel Hat Hızı" TextAlignment="Center" FontSize="25" FontFamily="Arial" Margin="0, 20, 0, 10"  />
-            <lvc:AngularGauge Grid.Row="1" Value="{Binding Value}" FromValue="0" ToValue="100" 
+            <lvc:AngularGauge Grid.Row="1" Value="{Binding gMakinaActualHizValue}" FromValue="0" ToValue="100" 
                           LabelsStep="20" TicksStep="5" Wedge="300"
                           TicksForeground="White" Foreground="White" 
                           FontWeight="Bold" FontSize="16"
-                          SectionsInnerRadius=".9" Height="150">
+                          SectionsInnerRadius=".9" Height="150"
+                              x:Name="gMakinaActualHizGauge">
                 <lvc:AngularGauge.Sections>
                     <lvc:AngularSection FromValue="0" ToValue="100" Fill="Black"/>
                 </lvc:AngularGauge.Sections>
@@ -173,17 +174,17 @@
             <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Height="60"
                     HorizontalAlignment="Center" Margin="0, 15, 0, 0">
                 <WrapPanel>
-                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0" x:Name="actualSpeed"/>
+                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0" x:Name="gMakinaActualHiz"/>
                     <TextBlock Text="m/dk" Padding="5" FontSize="25" Margin="0, 5, 0, 0" />
                 </WrapPanel>
             </Border>
             
             <TextBlock Text="İstenilen Hat Hızı" TextAlignment="Center" FontSize="25" FontFamily="Arial" Margin="0, 40, 0, 10"  />
-            <lvc:AngularGauge Grid.Row="1" Value="{Binding Value}" FromValue="0" ToValue="100" 
+            <lvc:AngularGauge Grid.Row="1" Value="{Binding gAnaHizSetMdkValue}" FromValue="0" ToValue="100" 
                           LabelsStep="20" TicksStep="5" Wedge="300"
                           TicksForeground="White" Foreground="White" 
                           FontWeight="Bold" FontSize="16"
-                          SectionsInnerRadius=".9" Height="150">
+                          SectionsInnerRadius=".9" Height="150" x:Name="gAnaHizSetMdkGauge">
             <lvc:AngularGauge.Sections>
                 <lvc:AngularSection FromValue="0" ToValue="100" Fill="Black"/>
             </lvc:AngularGauge.Sections>
@@ -192,7 +193,7 @@
             <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Height="60"
                     HorizontalAlignment="Center" Margin="0, 15, 0, 0">
                 <WrapPanel>
-                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0"/>
+                    <TextBlock Text="100.10" Padding="5" FontSize="25" Margin="0, 5, 0, 0" x:Name="gAnaHizSetMdk"/>
                     <TextBlock Text="m/dk" Padding="5" FontSize="25" Margin="0, 5, 0, 0" />
                 </WrapPanel>
             </Border>
@@ -214,15 +215,15 @@
                 <Border Background="White" BorderBrush="#68838B" BorderThickness="2" Height="60" Margin="10, 0, 5, 0" Width="175"
                         VerticalAlignment="Center" HorizontalAlignment="Right">
                     <WrapPanel>
-                        <TextBlock Text="100.10" Padding="10" FontSize="20" Margin="0, 5, 0, 0"/>
+                        <TextBlock Text="100.10" Padding="10" FontSize="20" Margin="0, 5, 0, 0" x:Name="gOtomatikHiz"/>
                         <TextBlock Text="m/dk" Padding="10" FontSize="20" Margin="0, 5, 0, 0" />
                     </WrapPanel>
                 </Border>
             </Grid>
 
 
-            <Button x:Name="AutomaticSpeed" Margin="10,0,0,20" Height="70" Width="230"
-                Background="White" BorderBrush="#68838B">
+            <Button x:Name="gOtomatikGit" Margin="10,0,0,20" Height="70" Width="230"
+                Background="White" BorderBrush="#68838B" TouchDown="gOtomatikGit_TouchDown">
                 <Grid  Height="70" Width="200">
                     <Image Stretch="Uniform" Source="pack://application:,,,/Images/gauge.png" Margin="0,0,10,10"
                        Width="60"

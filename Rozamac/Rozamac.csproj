@@ -116,6 +116,7 @@
     <Compile Include="Events\HomePageEvent.cs" />
     <Compile Include="Events\LineSchemaEvent.cs" />
     <Compile Include="Events\MainEvent.cs" />
+    <Compile Include="Events\StartEvent.cs" />
     <Compile Include="Models\Keyboards.cs" />
     <Compile Include="Views\Alarms.xaml.cs">
       <DependentUpon>Alarms.xaml</DependentUpon>

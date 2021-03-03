@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rozamac.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,18 @@ namespace Rozamac.Views
     public partial class UserSelectionPage : Window
     {
         ContentControl content;
-        public UserSelectionPage(ContentControl contentControl)
+        MainController mainController;
+
+        public UserSelectionPage(ContentControl contentControl, MainController main)
         {
             InitializeComponent();
             content = contentControl;
+            mainController = main;
         }
 
         private void ChooseUser_Click(object sender, RoutedEventArgs e)
         {
-            content.Content = new Login(content);
+            content.Content = new Login(content, mainController);
             Close();
         }
 
